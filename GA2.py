@@ -6,7 +6,7 @@ import random   #since we ll be using random in our code we need to call in the 
 _N=80#Gene length
 _P=100#Population Size
 _MR=8#mutation rate
-_lengthOfRule=8
+_lengthOfRule=7
 
 data=open("data2.txt", "r") # We reference the Data2.txt that we were given   and we store em in
 text=data.readlines()
@@ -18,7 +18,7 @@ class Rule:
                         # the aim is to find patterns similar to the one from the txt file and if we do we get their valua(1) and we add  
 
 global_rulebase=[]
-for i in range(1, 65):
+for i in range(1, 61):
     line = text[i].split(" ")
     condition = list(map(int, list(line[0])))
     output = int(line[1][0])
@@ -46,7 +46,7 @@ class Individual:
             action=line[_lengthOfRule-1]
             local_rulebase.append(Rule(condition, action))
         
-        for i in range(64):
+        for i in range(60):
             for j in range(10):
                 matches=0
                 for l in range(_lengthOfRule-1):

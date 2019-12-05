@@ -7,9 +7,9 @@ import random #we will be using random numbers in our code so we call the radom 
 _N=60#Gene length
 _P=100#Population Size
 _MR=1#mutation rate
-_lengthOfRule=6#a constant for the length of the dataset
+_lengthOfRule=7#a constant for the length of the dataset
 
-data=open("data1.txt", "r")
+data=open("data1.txt", "r") 
 text=data.readlines()# We reference the Data1.txt that we were given 
 
 class Rule:
@@ -18,7 +18,7 @@ class Rule:
         self.action=action# we create need the Rule class in order to get the data from the data1.txt and  we search for 
                         #similar pattern to  the aim is to find patterns similar to the one from the txt file and if we do we get their 
 global_rulebase=[]      #valua(1) and we add  them to our list
-for i in range(1, 33):
+for i in range(1, 61):
     line = text[i].split(" ")
     condition = list(map(int, list(line[0])))
     output = int(line[1][0])
@@ -46,7 +46,7 @@ class Individual:
             action=line[_lengthOfRule-1]
             local_rulebase.append(Rule(condition, action))
         
-        for i in range(32):     # we check each bit  to see if it matches with the file
+        for i in range(60):     # we check each bit  to see if it matches with the file
             for j in range(10):
                 matches=0
                 for l in range(_lengthOfRule-1):
